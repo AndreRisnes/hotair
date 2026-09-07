@@ -2,7 +2,6 @@ package com.norse.hotair.controller;
 
 import com.norse.hotair.service.HotairService;
 import com.norse.hotair.service.TemperatureReading;
-import com.norse.hotair.repository.ReadingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +30,7 @@ public class HotairController {
     }
 
     @PostMapping("/history/download")
-    public ResponseEntity<FileSystemResource> downloadHistory(@RequestBody String stationFile) {
+    public ResponseEntity<FileSystemResource> downloadHistoricFile(@RequestBody String stationFile) {
         File file = new File(DATA_DIR + "/" + stationFile);
         FileSystemResource resource = new FileSystemResource(file);
 
