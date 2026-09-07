@@ -14,7 +14,7 @@
     <groupId>com.norse</groupId>
     <artifactId>hotair</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Hotair backendweather-backend</name>
+    <name>Norse Hotair™ backend</name>
 
     <properties>
         <java.version>17</java.version>
