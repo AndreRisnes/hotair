@@ -40,7 +40,7 @@ public class ReadingRepository {
         conn.createStatement().execute("""
                 create table if not exists temperature_readings (
                     id identity primary key,
-                    date_time timestamp not null,
+                    date_time timestamp,
                     area varchar(128) not null,
                     location VARCHAR(128) not null,
                     observation double not null
