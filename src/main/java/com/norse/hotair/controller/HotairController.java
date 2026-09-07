@@ -1,6 +1,6 @@
 package com.norse.hotair.controller;
 
-import com.norse.hotair.service.HotairService;
+import com.norse.hotair.service.ReadingService;
 import com.norse.hotair.service.TemperatureReading;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -17,11 +17,11 @@ public class HotairController {
     private static final String DATA_DIR = "src/main/resources/data";
 
     @Autowired
-    private HotairService hotairService;
+    private ReadingService readingService;
 
     @GetMapping("/average/{area}")
     public Map<String, Object> getAverageTemperature(@PathVariable String area) throws Exception {
-        double average = hotairService.getAverageTemperature(area);
+        double average = readingService.getAverageTemperature(area);
 
         Map<String, Object> response = new HashMap<>();
         response.put("area", area);
@@ -42,6 +42,6 @@ public class HotairController {
 
     @PostMapping("/reading")
     public void registerReading(@RequestBody TemperatureReading reading) throws Exception {
-        hotairService.registerReading(reading);
+        readingService.registerReading(reading);
     }
 }

@@ -1,22 +1,17 @@
 package com.norse.hotair.service;
 
 import com.norse.hotair.repository.ReadingRepository;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static java.util.stream.Collectors.toCollection;
 
 
 @Service
-public class HotairService {
+public class ReadingService {
     private final ReadingRepository readingRepository;
 
-    public HotairService(ReadingRepository readingRepository) {
+    public ReadingService(ReadingRepository readingRepository) {
         this.readingRepository = readingRepository;
     }
 
