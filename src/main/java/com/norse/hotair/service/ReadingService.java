@@ -21,7 +21,7 @@ public class ReadingService {
 
     public double getAverageTemperature(String area) throws SQLException {
         List<TemperatureReading> readings = readingRepository.loadHistoricReadings(area);
-        readingRepository.loadReadings(area).forEach(reading -> {
+        readingRepository.loadCurrentReadings(area).forEach(reading -> {
             if (!readings.contains(reading)) {
                 readings.add(reading);
             }

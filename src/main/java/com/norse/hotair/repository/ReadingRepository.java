@@ -55,7 +55,7 @@ public class ReadingRepository {
         DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD).prepareStatement(sql).execute();
     }
 
-    public List<TemperatureReading> loadReadings(String area) throws SQLException {
+    public List<TemperatureReading> loadCurrentReadings(String area) throws SQLException {
         String sql = "select date_time, area, location, observation from temperature_readings where area = '" + area + "'";
 
         ResultSet rs = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD).createStatement().executeQuery(sql);
