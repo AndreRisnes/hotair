@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 public class HotairController {
-    private static final String DATA_DIR = "src/main/resources/data";
+    private static final String DATA_DIR = "src/main/resources/historicdata";
 
     @Autowired
     private ReadingService readingService;
